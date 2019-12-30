@@ -10,7 +10,7 @@
     <router-view/>
     <br>
     <br>
-    <table align="right" class="crypto-container">
+    <table class="crypto-container">
       <tr>
         <th>Crypto Name</th>
         <th>Value($)</th>
@@ -21,23 +21,23 @@
         <td>{{value.EUR}}</td>
         <td>{{value.USD}}</td>
     </tr>
+    <tr>
+      <button type="button" class="trigger">Analysis</button>
+    </tr>
   </table>
-  <button type="button" class="trigger">Analysis</button>
     <div class="modal">
        <div class="modal-content">
            <span class="close-button">&times;</span>
-           <h1>Hello, I am a modal!</h1>
-
+           <h1>Whats the value of my wallet?</h1>
                <br><br>
                <label>Number of shares owned:</label>
                <input id="one" type="number" name="" value="">
                <br><br>
-               <label>Name of Crypto:</label>
+               <label>Name/Price of Coin:</label>
                <select>
-                 <option id="123" v-for="(key,value) in cryptos">{{value}}</option>
+                 <option id="123" v-for="(key,value) in cryptos">{{value}}: ${{key.USD}}</option>
                </select>
                <br>
-               <!-- <p>Current Value: ${{cryptos.ETH.USD}}</p> -->
                <br>
                <label>Value of coin:</label>
                <input type="number" name="" value="" id="two">
@@ -55,7 +55,7 @@
        <tr>
          <th>Crypto News</th>
        </tr>
-       <tr v-for="value in news"><td>{{value.title}}</td></tr>
+       <tr v-for="value in news"><td>{{value.title}}<br><b>Source: </b><a href="value.url">{{value.source}}</a></td></tr>
      </table>
    </div>
   </div>
@@ -78,7 +78,7 @@ export default {
     }).catch(e => {
       this.errors.push(e)
     })
-    axios.get('https://min-api.cryptocompare.com/data/news/?feeds=cryptocompare&api_key=4c12c3112c1df9fbfa20473e9eda953e0bb351e112affb4dd6039b2b05d72989').then(response => {
+    axios.get('https://min-api.cryptocompare.com/data/news/?feeds=cryptocompare,cointelegraph,coindesk&api_key=4c12c3112c1df9fbfa20473e9eda953e0bb351e112affb4dd6039b2b05d72989').then(response => {
       this.news = response.data
       console.log(response)
     }).catch(e => {
@@ -97,16 +97,21 @@ export default {
 </script>
 
 <style>
+.crypto-container {
+position: absolute;
+right: 250px;
+}
 .news {
   height: 900px;
-  width: 150px;
+  width: 300px;
   background-color: white;
-  position: fixed;
-  left: 0px;
-  top: 250px;
+  position: relative;
+  left: 10px;
+  top: 0px;
 }
 .trigger {
   font-size: 30px;
+
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -121,7 +126,7 @@ export default {
   text-align:center;
   padding: 14px 16px;
   text-decoration:none;
-  font-size: 17px;
+  font-size: 20px;
 }
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -165,6 +170,8 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: white;
+        color: black;
+        font-weight: bold;
         padding: 1rem 1.5rem;
         width: 24rem;
         border-radius: 0.5rem;
@@ -196,16 +203,17 @@ table, th, td {
 table {
           width: 50%;
           height: 40%;
-          background-color: #d5e1df;
+          background-color: white;
 
         }
         td{
+
           height: 50px;
           font-size: 20px;
           font-family:
         }
 th{
-          background-color: #e3eaa7;
+          background-color: lightgray;
           text-decoration: underline;
           font-weight: bold;
           font-size: 22px;
