@@ -10,7 +10,7 @@
     <router-view/>
     <br>
     <br>
-    <table align="center" class="crypto-container">
+    <table align="right" class="crypto-container">
       <tr>
         <th>Crypto Name</th>
         <th>Value($)</th>
@@ -55,7 +55,7 @@
        <tr>
          <th>Crypto News</th>
        </tr>
-       <tr v-for="value in news"><td>{{value.id}}</td></tr>
+       <tr v-for="value in news"><td>{{value.title}}</td></tr>
      </table>
    </div>
   </div>
@@ -98,11 +98,12 @@ export default {
 
 <style>
 .news {
-  height: 500px;
-  width: 135px;
+  height: 900px;
+  width: 150px;
   background-color: white;
-  position: relative;
+  position: fixed;
   left: 0px;
+  top: 250px;
 }
 .trigger {
   font-size: 30px;
@@ -193,7 +194,7 @@ table, th, td {
           padding: 20px;
         }
 table {
-          width: 60%;
+          width: 50%;
           height: 40%;
           background-color: #d5e1df;
 
