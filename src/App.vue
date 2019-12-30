@@ -164,6 +164,7 @@ right: 250px;
         transform: scale(1.1);
         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
     }
+    
 .modal-content {
         position: absolute;
         top: 50%;
