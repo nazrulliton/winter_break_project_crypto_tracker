@@ -51,12 +51,23 @@
    </div>
 
    <div>
-     <table class="news">
+
+     <!-- <ul class="news">
+       <header class="newtitle">
+       <h2 align="left">Crypto News</h2>
+          </header>
+       <li align="left" v-for="value in news">{{value.title}}<br><b>Source:</b> {{value.source}}<br><br></li>
+
+     </ul> -->
+
+
+
+     <!-- <table class="news">
        <tr>
          <th>Crypto News</th>
        </tr>
        <tr v-for="value in news"><td>{{value.title}}<br><b>Source: </b><a href="value.url">{{value.source}}</a></td></tr>
-     </table>
+     </table> -->
    </div>
   </div>
 </template>
@@ -101,13 +112,25 @@ export default {
 position: absolute;
 right: 250px;
 }
+.newtitle {
+  background-color: lightgray;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 28px;
+  /* height: 100px;
+  width: 300px; */
+}
+
+
 .news {
   height: 900px;
-  width: 300px;
+  width: 250px;
   background-color: white;
-  position: relative;
-  left: 10px;
+  position:inherit;
+  /* left: 10px; */
   top: 0px;
+  overflow-x:auto;
+  list-style-type: none;
 }
 .trigger {
   font-size: 30px;
