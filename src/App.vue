@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="topnav">
-      <h1>Crypto. Tracker</h1>
+      <h1>Crypto Tracker</h1>
         <a class="active" href="#home">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
