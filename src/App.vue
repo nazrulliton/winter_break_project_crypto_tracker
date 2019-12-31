@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="topnav">
-      <h1>Crypto Tracker</h1>
+      <h1>Crypto. Tracker</h1>
         <a class="active" href="#home">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
@@ -164,7 +164,7 @@ right: 250px;
         transform: scale(1.1);
         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
     }
-    
+
 .modal-content {
         position: absolute;
         top: 50%;
