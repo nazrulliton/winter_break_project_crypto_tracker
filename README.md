@@ -1,6 +1,6 @@
 # vue-crypto
 
-> A Vue.js project
+This is a simple web app i created to gain experience and understanding working alongside side APIs. The app itself tracks real time prices via a coinmarket API and tracks breaks news related to the Crypto Currency world - this draws news articles from a external API. The App also has a modal pop up which can assist you in calculating your holdings. 
 
 ## Build Setup
 
